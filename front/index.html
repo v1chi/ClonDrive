@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClonDrive</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>ClonDrive</h1>
+            <p>por Victoria Quiroga</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="drop-zone">
+                <span class="drop-icon">📁</span>
+                <p>Arrastra y suelta tus archivos aquí</p>
+                <input type="file" id="file-input" style="display: none;">
+                <button id="browse-btn" class="btn-primary">O buscar en tu PC</button>
+            </div>
+
+            <div id="uploading-state" class="hidden">
+                <p>Subiendo archivo</p>
+            </div>
+
+            <section class="recent-files">
+                <h2>Últimos Archivos</h2>
+                <div id="files-list" class="files-list">
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
