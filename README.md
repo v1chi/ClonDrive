@@ -2,7 +2,6 @@
 
 Un clon de Google Drive que permite subir, listar y descargar archivos utilizando LocalStack, Terraform y un backend en Python.
 
----
 
 ## Herramientas Utilizadas
 
@@ -12,7 +11,6 @@ Un clon de Google Drive que permite subir, listar y descargar archivos utilizand
 - **Orquestación:** Docker Compose.
 - **Infraestructura como Código (IaC):** Terraform.
 
----
 
 ## Requisitos Previos
 
@@ -23,7 +21,6 @@ Para poder replicar este proyecto en otro PC, necesitas tener instalado:
 3. Python y pip.
 4. Cuenta gratuita en LocalStack Web App para obtener el AUTH_TOKEN.
 
----
 
 ## Variables de Entorno
 
@@ -38,18 +35,15 @@ S3_BUCKET=clondrive-files
 AWS_REGION=us-east-1
 ```
 
----
 
 ## Pasos de Instalación y Ejecución
 
-Sigue este flujo en orden:
 
 ### Paso 1: Levantar LocalStack
 Abre una terminal en la raíz del proyecto y ejecuta Docker Compose para levantar el contenedor de LocalStack:
 ```bash
 docker compose up -d
 ```
-Espera unos segundos a que el contenedor inicie completamente.
 
 ### Paso 2: Crear la Infraestructura (S3) con Terraform
 En una terminal, entra a la carpeta de Terraform y aplica la configuración para crear el bucket:
@@ -57,7 +51,6 @@ En una terminal, entra a la carpeta de Terraform y aplica la configuración para
 cd terraform
 terraform init
 terraform apply -auto-approve
-cd ..
 ```
 
 ### Paso 3: Levantar el Backend
