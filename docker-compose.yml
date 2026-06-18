@@ -1,0 +1,25 @@
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: clondrive-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEBUG=0
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN}
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: clondrive-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=clondrive
+      - POSTGRES_PASSWORD=clondrive123
+      - POSTGRES_DB=clondrive
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
